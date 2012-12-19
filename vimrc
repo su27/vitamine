@@ -94,7 +94,7 @@
   set background=dark
 
   if has('gui_macvim')
-    colorscheme solarized
+    colorscheme macvim
   else
     let g:solarized_termcolors=256
     colorscheme solarized
@@ -151,6 +151,16 @@
 " }
 
 " Key Mapping {
+  " map <F10> :VSTreeExplore<cr>
+  :nnoremap <CR> :nohlsearch<CR><CR>
+  map tn :tabnext<cr>
+  map tp :tabprevious<cr>
+  map te :tabedit
+  map tj 10j
+  map tk 10k
+  map <C-j> 10j
+  map <C-k> 10k
+
   let mapleader = ","
   let g:mapleader = ","
 
@@ -322,27 +332,17 @@
   call InitializeDirectories()
 " }
 
-if &diff
-    colorscheme slate
-endif
+" for diff {
+  if &diff
+      colorscheme slate
+  endif
 
-hi DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=0
-hi DiffChange term=reverse cterm=bold ctermbg=white ctermfg=0
-hi DiffText term=reverse cterm=bold ctermbg=gray ctermfg=0
-hi DiffDelete term=reverse cterm=bold ctermbg=lightred ctermfg=0
+  hi DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=0
+  hi DiffChange term=reverse cterm=bold ctermbg=white ctermfg=0
+  hi DiffText term=reverse cterm=bold ctermbg=gray ctermfg=0
+  hi DiffDelete term=reverse cterm=bold ctermbg=lightred ctermfg=0
+" }
 
-" key stock
-map tn :tabnext<cr>
-map tp :tabprevious<cr>
-map te :tabedit
-map tj 10j
-map tk 10k
-map <C-j> 10j
-map <C-k> 10k
-
-" map <F10> :VSTreeExplore<cr>
-setlocal et sta sw=4 ts=4 sts=4 fdm=marker ff=unix fenc=utf8
-:nnoremap <CR> :nohlsearch<CR><CR>
 
 highlight clear SpellBad
 highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
