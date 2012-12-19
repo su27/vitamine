@@ -25,19 +25,19 @@
   NeoBundle 'kien/ctrlp.vim'              " Fuzzy file, buffer, mru, tag, etc finder
   NeoBundle 'myusuf3/numbers.vim'         " A vim plugin for better line numbers
   NeoBundle 'Lokaltog/vim-powerline'      " The ultimate vim statusline utility
-  NeoBundle 'mattn/zencoding-vim'         " zen-coding for vim: http://code.google.com/p/zen-coding/
+  " NeoBundle 'mattn/zencoding-vim'         " zen-coding for vim: http://code.google.com/p/zen-coding/
   NeoBundle 'ervandew/supertab'           " Perform all your vim insert mode completions with Tab
   NeoBundle 'hail2u/vim-css3-syntax'      " Add CSS3 syntax support to vim's built-in `syntax/css.vim`
   NeoBundle 'skammer/vim-css-color'       " Highlight colors in css files
-  NeoBundle 'wavded/vim-stylus'           " Syntax Highlighting for Stylus
-  NeoBundle 'digitaltoad/vim-jade'        " Vim Jade template engine syntax highlighting and indention
+  " NeoBundle 'wavded/vim-stylus'           " Syntax Highlighting for Stylus
+  " NeoBundle 'digitaltoad/vim-jade'        " Vim Jade template engine syntax highlighting and indention
   NeoBundle 'pangloss/vim-javascript'     " Vastly improved vim's javascript indentation
-  NeoBundle 'plasticboy/vim-markdown'     " Syntax highlighting and matching rules for Markdown
+  " NeoBundle 'plasticboy/vim-markdown'     " Syntax highlighting and matching rules for Markdown
   NeoBundle 'tpope/vim-fugitive'          " A Git wrapper so awesome, it should be illegal
   NeoBundle 'tpope/vim-surround'          " quoting/parenthesizing made simple
 
   " Github `vim-scripts`
-  NeoBundle 'sudo.vim'                    " Allows one to edit a file with prevledges from an unprivledged session
+  " NeoBundle 'sudo.vim'                    " Allows one to edit a file with prevledges from an unprivledged session
   NeoBundle 'ack.vim'                     " Plugin for the Perl module / CLI script 'ack'
   NeoBundle 'EasyMotion'                  " Vim motions on speed!
 
@@ -227,8 +227,7 @@
 " }
 
 " nerdcommenter {
-  nmap <leader>n<space> <plug>NERDCommenterToggle
-  vmap <leader>n<space> <plug>NERDCommenterToggle
+  map mm <plug>NERDCommenterToggle
 " }
 
 " CtrlP {
@@ -264,6 +263,7 @@
 " Powerline {
   let g:Powerline_symbols = 'fancy'
   let g:Powerline_colorscheme = 'solarized256'
+  set guifont=Anonymous\ Pro\ for\ Powerline:h13
 " }
 
 " EasyMotion {
@@ -321,3 +321,29 @@
   endfunction
   call InitializeDirectories()
 " }
+
+if &diff
+    colorscheme slate
+endif
+
+hi DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=0
+hi DiffChange term=reverse cterm=bold ctermbg=white ctermfg=0
+hi DiffText term=reverse cterm=bold ctermbg=gray ctermfg=0
+hi DiffDelete term=reverse cterm=bold ctermbg=lightred ctermfg=0
+
+" key stock
+map tn :tabnext<cr>
+map tp :tabprevious<cr>
+map te :tabedit
+map tj 10j
+map tk 10k
+map <C-j> 10j
+map <C-k> 10k
+
+" map <F10> :VSTreeExplore<cr>
+setlocal et sta sw=4 ts=4 sts=4 fdm=marker ff=unix fenc=utf8
+:nnoremap <CR> :nohlsearch<CR><CR>
+
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+
