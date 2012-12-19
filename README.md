@@ -6,7 +6,7 @@ Vim plugins, scripts and resources for my daily use.
 
 1. Clone Vitamine:
   ```bash
-  $ git clone git@github.com:mockee/vitamine.git ~/.vim
+  $ git clone git@github.com:su27/vitamine.git ~/.vim
   ```
 
 3. Create link
