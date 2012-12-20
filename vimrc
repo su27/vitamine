@@ -270,7 +270,6 @@
 " Powerline {
   let g:Powerline_symbols = 'fancy'
   let g:Powerline_colorscheme = 'solarized256'
-  set guifont=Anonymous\ Pro\ for\ Powerline:h13
 " }
 
 " EasyMotion {
