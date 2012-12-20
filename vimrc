@@ -18,14 +18,14 @@
 
   " Github Repos
   NeoBundle 'Shougo/vimproc'              " Interactive command execution
-  NeoBundle 'Shougo/neocomplcache'        " Ultimate auto-completion system
+  "NeoBundle 'Shougo/neocomplcache'        " Ultimate auto-completion system
   NeoBundle 'scrooloose/syntastic'        " Syntax checking hacks
-  " NeoBundle 'scrooloose/nerdtree'         " A tree explorer plugin
+  NeoBundle 'scrooloose/nerdtree'         " A tree explorer plugin
   NeoBundle 'scrooloose/nerdcommenter'    " Vim plugin for intensely orgasmic commenting
   NeoBundle 'kien/ctrlp.vim'              " Fuzzy file, buffer, mru, tag, etc finder
   NeoBundle 'myusuf3/numbers.vim'         " A vim plugin for better line numbers
   NeoBundle 'Lokaltog/vim-powerline'      " The ultimate vim statusline utility
-  " NeoBundle 'ervandew/supertab'           " Perform all your vim insert mode completions with Tab
+  "NeoBundle 'ervandew/supertab'           " Perform all your vim insert mode completions with Tab
   NeoBundle 'hail2u/vim-css3-syntax'      " Add CSS3 syntax support to vim's built-in `syntax/css.vim`
   NeoBundle 'skammer/vim-css-color'       " Highlight colors in css files
   NeoBundle 'pangloss/vim-javascript'     " Vastly improved vim's javascript indentation
@@ -224,12 +224,12 @@
 " }
 
 " neocomplcache {
-  let g:acp_enableAtStartup = 0
-  let g:neocomplcache_enable_at_startup = 1
-  let g:neocomplcache_enable_smart_case = 1
-  let g:neocomplcache_enable_camel_case_completion = 1
-  let g:neocomplcache_enable_underbar_completion = 1
-  let g:neocomplcache_min_syntax_length = 3
+  "let g:acp_enableAtStartup = 0
+  "let g:neocomplcache_enable_at_startup = 1
+  "let g:neocomplcache_enable_smart_case = 1
+  "let g:neocomplcache_enable_camel_case_completion = 1
+  "let g:neocomplcache_enable_underbar_completion = 1
+  "let g:neocomplcache_min_syntax_length = 3
 " }
 
 " nerdcommenter {
