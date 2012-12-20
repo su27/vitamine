@@ -263,6 +263,7 @@
 " Fugitive {
   nnoremap <silent> <leader>st :Gstatus<CR>
   nnoremap <silent> <leader>di :Gdiff<CR>
+  nnoremap <silent> <leader>bl :Gblame<CR>
   autocmd QuickFixCmdPost *grep* cwindow
 "}
 
