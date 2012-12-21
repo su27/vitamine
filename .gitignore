@@ -4,3 +4,4 @@ views/
 backup/
 bundle/*
 !bundle/neobundle.vim
+*.pyc
