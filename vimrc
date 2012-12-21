@@ -48,7 +48,7 @@
 " General {
   syntax on                  " syntax highlighting
   filetype plugin indent on  " automatically detect file types
-  set mouse=a                " automatically enable mouse usage
+  "set mouse=a                " automatically enable mouse usage
   set mousehide              " hide the mouse cursor while typing
   set encoding=utf-8
   scriptencoding utf-8
@@ -127,7 +127,7 @@
   set scrolljump=5                " lines to scroll when cursor leaves screen
   set scrolloff=3                 " minimum lines to keep above and below cursor
   set foldenable                  " auto fold code
-  set cursorline                  " highlight current line
+  " set cursorline                  " highlight current line
   set anti                        " make text pretty
 " }
 
