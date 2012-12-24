@@ -24,7 +24,7 @@
   NeoBundle 'scrooloose/nerdtree'         " A tree explorer plugin
   NeoBundle 'scrooloose/nerdcommenter'    " Vim plugin for intensely orgasmic commenting
   NeoBundle 'kien/ctrlp.vim'              " Fuzzy file, buffer, mru, tag, etc finder
-  NeoBundle 'myusuf3/numbers.vim'         " A vim plugin for better line numbers
+  "NeoBundle 'myusuf3/numbers.vim'         " A vim plugin for better line numbers
   NeoBundle 'Lokaltog/vim-powerline'      " The ultimate vim statusline utility
   "NeoBundle 'ervandew/supertab'           " Perform all your vim insert mode completions with Tab
   NeoBundle 'hail2u/vim-css3-syntax'      " Add CSS3 syntax support to vim's built-in `syntax/css.vim`
@@ -116,7 +116,8 @@
     set laststatus=2
   endif
 
-  set rnu                         " relative line number
+  " set rnu                         " relative line number
+  set nu
   set numberwidth=4               " set the width of line number gutter column
   set linespace=2                 " set spaces between rows
   set ignorecase                  " case insensitive search
@@ -189,7 +190,7 @@
   nmap <silent> <leader><space> :nohlsearch<CR>
 
   " toggle between relative and absolute numbering
-  nnoremap <F3> :NumbersToggle<CR>
+  " nnoremap <F3> :NumbersToggle<CR>
 " }
 
 " NerdTree {
