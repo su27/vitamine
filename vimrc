@@ -101,7 +101,7 @@
     colorscheme macvim
   else
     let g:solarized_termcolors=256
-    colorscheme solarized
+    colorscheme elflord
 	  "colorscheme molokai
   endif
 
@@ -224,7 +224,6 @@
     \ 'mode': 'active',
     \ 'passive_filetypes': ['html','java'] }
 
-  let g:syntastic_python_checker = 'flake8'
   let g:syntastic_python_checker_args = '--ignore="E401,E501"'
   let g:syntastic_javascript_jshint_conf = '~/.jshintrc'
 " }
