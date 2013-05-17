@@ -37,6 +37,8 @@
   " NeoBundle 'sudo.vim'                    " Allows one to edit a file with prevledges from an unprivledged session
   NeoBundle 'ack.vim'                     " Plugin for the Perl module / CLI script 'ack'
   NeoBundle 'EasyMotion'                  " Vim motions on speed!
+  NeoBundle 'taglist.vim'                 " Provides an overview of the structure of source code
+  NeoBundle 'UltiSnips'                   " The ultimate snippet solution for python enabled Vim
 
   " Auto-Installation
   if neobundle#exists_not_installed_bundles()
@@ -87,6 +89,8 @@
   " Remove trailing whitespaces and ^M chars
   autocmd BufWritePre <buffer> call StripTrailingWhitespace()
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+  autocmd FileType java setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+  autocmd FileType xml setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 " }
 
 " UI {
@@ -104,6 +108,9 @@
   let g:solarized_termtrans=1
   let g:solarized_contrast='high'
   let g:solarized_visibility='high'
+  let g:solarized_termcolors=256
+
+  colorscheme solarized
 
   if has('cmdline_info')
     set ruler                   " show the ruler
@@ -209,13 +216,13 @@
   let g:nerdtree_tabs_open_on_gui_startup = 0
 
   " open a NERDTree automatically when vim starts up if no files were specified
-  autocmd vimenter * if !argc() | NERDTree | endif
+  " autocmd vimenter * if !argc() | NERDTree | endif
 " }
 
 " SyntaxCheckers {
   let g:syntastic_mode_map = {
     \ 'mode': 'active',
-    \ 'passive_filetypes': ['html'] }
+    \ 'passive_filetypes': ['html','java'] }
 
   let g:syntastic_python_checker = 'flake8'
   let g:syntastic_python_checker_args = '--ignore="E401,E501"'
@@ -247,7 +254,7 @@
   let g:ctrlp_working_path_mode = 'ra'
   let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
-  set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.pyc
 
   if has("gui_macvim")
     nnoremap <silent> <D-r> :CtrlPMRU<CR>
@@ -255,6 +262,7 @@
 
   nmap <silent> <leader>t :CtrlP<cr>
   nmap <silent> <leader>r :CtrlPMRU<cr>
+  nmap <silent> <leader>m :CtrlPMixed<cr>
 " }
 
 " Ack {
@@ -286,8 +294,27 @@
   hi link EasyMotionShade  Comment
 " }
 
+" UltiSnips {
+  let g:UltiSnipsSnippetDirectories=["snippets"]
+" }
+
 " Autocmd {
   autocmd! bufwritepost vimrc source ~/.vim/vimrc
+" }
+
+" Taglist {
+  nmap <silent> <leader>tg :TlistToggle<CR>
+  let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+  let Tlist_File_Fold_Auto_Close=1
+  let Tlist_Exit_OnlyWindow = 1
+  let Tlist_Show_Menu=1
+  let Tlist_GainFocus_On_ToggleOpen=1
+  let Tlist_Close_OnSelect=1
+  let Tlist_Compact_Format=1
+  let Tlist_Use_Right_Window = 1
+  let Tlist_WinWidth = 45
+  let Tlist_Inc_Winwidth = 0
+  let Tlist_Sort_Type = 'name'
 " }
 
 " Functions {
