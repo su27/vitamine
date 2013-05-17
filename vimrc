@@ -97,14 +97,6 @@
   set tabpagemax=15
   set background=dark
 
-  if has('gui_macvim')
-    colorscheme macvim
-  else
-    let g:solarized_termcolors=256
-    colorscheme elflord
-	  "colorscheme molokai
-  endif
-
   let g:solarized_termtrans=1
   let g:solarized_contrast='high'
   let g:solarized_visibility='high'
