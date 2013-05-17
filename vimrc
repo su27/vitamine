@@ -193,9 +193,6 @@
   nnoremap / /\v
   vnoremap / /\v
 
-  " clearing highlighted search
-  nmap <silent> <leader><space> :nohlsearch<CR>
-
   " toggle between relative and absolute numbering
   " nnoremap <F3> :NumbersToggle<CR>
 " }
@@ -277,6 +274,8 @@
   nnoremap <silent> <leader>di :Gdiff<CR>
   nnoremap <silent> <leader>bl :Gblame<CR>
   nnoremap <silent> <leader>.. :edit %:h<CR>
+  nnoremap <silent> <leader>nn :cnext<CR>
+  nnoremap <silent> <leader>pp :cprev<CR>
   autocmd QuickFixCmdPost *grep* cwindow
 "}
 
