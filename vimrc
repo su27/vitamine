@@ -132,7 +132,7 @@
   set scrolljump=5                " lines to scroll when cursor leaves screen
   set scrolloff=3                 " minimum lines to keep above and below cursor
   set foldenable                  " auto fold code
-  " set cursorline                  " highlight current line
+  set cursorline                  " highlight current line
   set anti                        " make text pretty
 " }
 
@@ -269,6 +269,7 @@
   nnoremap <silent> <leader>st :Gstatus<CR>
   nnoremap <silent> <leader>di :Gdiff<CR>
   nnoremap <silent> <leader>bl :Gblame<CR>
+  nnoremap <silent> <leader>.. :edit %:h<CR>
   autocmd QuickFixCmdPost *grep* cwindow
 "}
 
