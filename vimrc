@@ -100,6 +100,7 @@
   let g:solarized_termtrans=1
   let g:solarized_contrast='high'
   let g:solarized_visibility='high'
+  "in mintty, comment out the following line
   let g:solarized_termcolors=256
 
   colorscheme solarized
@@ -273,6 +274,8 @@
 
 " Powerline {
   let g:Powerline_symbols = 'fancy'
+  "in mintty, use the following:
+  "let g:Powerline_symbols = 'compatible'
   let g:Powerline_colorscheme = 'solarized256'
 " }
 
