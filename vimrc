@@ -38,7 +38,7 @@
   NeoBundle 'ack.vim'                     " Plugin for the Perl module / CLI script 'ack'
   NeoBundle 'EasyMotion'                  " Vim motions on speed!
   NeoBundle 'taglist.vim'                 " Provides an overview of the structure of source code
-  NeoBundle 'UltiSnips'                   " The ultimate snippet solution for python enabled Vim
+  "NeoBundle 'UltiSnips'                   " The ultimate snippet solution for python enabled Vim
 
   " Auto-Installation
   if neobundle#exists_not_installed_bundles()
