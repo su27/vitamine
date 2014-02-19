@@ -211,7 +211,8 @@
     \ 'mode': 'active',
     \ 'passive_filetypes': ['html','java'] }
 
-  let g:syntastic_python_checker_args = '--ignore="E401,E501"'
+  " C0103:Invalid name; C0111: no doc string
+  let g:syntastic_python_pylint_args = '-d C0103,C0111'
   let g:syntastic_javascript_jshint_conf = '~/.jshintrc'
 " }
 
