@@ -211,8 +211,8 @@
     \ 'mode': 'active',
     \ 'passive_filetypes': ['html','java'] }
 
-  " C0103:Invalid name; C0111: no doc string
-  let g:syntastic_python_pylint_args = '-d C0103,C0111'
+  " C0103:Invalid name; C0111: no doc string; W0141 map/filter
+  let g:syntastic_python_pylint_args = '-d C0103,C0111,W0141'
   let g:syntastic_javascript_jshint_conf = '~/.jshintrc'
 " }
 
