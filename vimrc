@@ -27,6 +27,7 @@
   "NeoBundle 'myusuf3/numbers.vim'         " A vim plugin for better line numbers
   NeoBundle 'Lokaltog/vim-powerline'      " The ultimate vim statusline utility
   "NeoBundle 'ervandew/supertab'           " Perform all your vim insert mode completions with Tab
+  NeoBundle 'Lokaltog/vim-easymotion'     " Vim motions on speed!
   NeoBundle 'hail2u/vim-css3-syntax'      " Add CSS3 syntax support to vim's built-in `syntax/css.vim`
   NeoBundle 'skammer/vim-css-color'       " Highlight colors in css files
   NeoBundle 'keitheis/vim-plim'           " Syntax Highlighting for Plim
@@ -37,7 +38,6 @@
   " Github `vim-scripts`
   " NeoBundle 'sudo.vim'                    " Allows one to edit a file with prevledges from an unprivledged session
   NeoBundle 'ack.vim'                     " Plugin for the Perl module / CLI script 'ack'
-  NeoBundle 'EasyMotion'                  " Vim motions on speed!
   NeoBundle 'taglist.vim'                 " Provides an overview of the structure of source code
   "NeoBundle 'UltiSnips'                   " The ultimate snippet solution for python enabled Vim
 
@@ -282,8 +282,6 @@
 " }
 
 " EasyMotion {
-  let g:EasyMotion_leader_key = '<Leader>'
-
   " Compatible with `solarized` colorscheme
   hi link EasyMotionTarget ErrorMsg
   hi link EasyMotionShade  Comment
