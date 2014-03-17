@@ -1,3 +1,5 @@
+" This is a su27-forked version of vimrc, inherited from:
+
 " Vitamine {
 "   Maintainer: Kaavie <mockee at gmail.com>
 "   Notes: http://mockee.com
@@ -8,6 +10,11 @@
   filetype on
   filetype off
   filetype plugin indent on
+
+  " for some env, vim has to be explicitly set to 256 colors
+  let &t_Co=256
+  let &t_AF="\e[38;5;%dm"
+  let &t_AB="\e[48;5;%dm"
 " }
 
 " NeoBundles {
@@ -276,8 +283,8 @@
 "}
 
 " Powerline {
-  let g:Powerline_symbols = 'fancy'
-  "in mintty, use the following:
+  "let g:Powerline_symbols = 'fancy'
+  "if not use patched font:
   let g:Powerline_symbols = 'compatible'
   let g:Powerline_colorscheme = 'solarized256'
 " }
@@ -391,5 +398,3 @@ func FormartSrc()
     endif
     exec "e! %"
 endfunc
-
-let g:pyflakes_use_quickfix = 0
