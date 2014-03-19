@@ -256,7 +256,7 @@
     nnoremap <silent> <D-r> :CtrlPMRU<CR>
   endif
 
-  nmap <silent> <leader>c :CtrlP<cr>
+  nmap <silent> <leader>f :CtrlP<cr>
   nmap <silent> <leader>r :CtrlPMRU<cr>
   nmap <silent> <leader>m :CtrlPMixed<cr>
 " }
