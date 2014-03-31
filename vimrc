@@ -283,9 +283,9 @@
 "}
 
 " Powerline {
-  "let g:Powerline_symbols = 'fancy'
+  let g:Powerline_symbols = 'fancy'
   "if not use patched font:
-  let g:Powerline_symbols = 'compatible'
+  "let g:Powerline_symbols = 'compatible'
   let g:Powerline_colorscheme = 'solarized256'
 " }
 
@@ -398,3 +398,14 @@ func FormartSrc()
     endif
     exec "e! %"
 endfunc
+
+if &term =~ '^xterm'
+  let &t_SI .= "\<Esc>[5 q"
+  let &t_EI .= "\<Esc>[1 q"
+  " 1 or 0 -> blinking block
+  " 2 -> solid underscore
+  " 3 -> blinking underscore
+  " 4 -> solid block
+  " 5 -> blinking vertical bar
+  " 6 -> solid vertical bar
+endif
