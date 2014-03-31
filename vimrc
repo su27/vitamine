@@ -166,8 +166,8 @@
   map tn :tabnext<cr>
   map tp :tabprevious<cr>
   map te :tabedit
-  map tj 10j
-  map tk 10k
+  map rn :bnext<cr>
+  map rp :bprev<cr>
   map <C-j> 10j
   map <C-k> 10k
 
