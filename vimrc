@@ -161,7 +161,6 @@
 " }
 
 " Key Mapping {
-  " map <F10> :VSTreeExplore<cr>
   :nnoremap <CR> :nohlsearch<CR><CR>
   map tn :tabnext<cr>
   map tp :tabprevious<cr>
@@ -242,6 +241,7 @@
 
 " nerdcommenter {
   map mm <plug>NERDCommenterToggle
+  map <Leader>cm NERDComMinimalComment
 " }
 
 " CtrlP {
@@ -305,7 +305,7 @@
 
 " Taglist {
   nmap <silent> <leader>tg :TlistToggle<CR>
-  let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+  "let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
   let Tlist_File_Fold_Auto_Close=1
   let Tlist_Exit_OnlyWindow = 1
   let Tlist_Show_Menu=1
@@ -362,21 +362,7 @@
   call InitializeDirectories()
 " }
 
-" for diff {
-  if &diff
-      colorscheme slate
-  endif
-
-  hi DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=0
-  hi DiffChange term=reverse cterm=bold ctermbg=white ctermfg=0
-  hi DiffText term=reverse cterm=bold ctermbg=gray ctermfg=0
-  hi DiffDelete term=reverse cterm=bold ctermbg=lightred ctermfg=0
-" }
-
-
-highlight clear SpellBad
-highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
-
+" autopep8 {
 map <F8> :call FormartSrc()<CR>
 
 func FormartSrc()
@@ -398,7 +384,9 @@ func FormartSrc()
     endif
     exec "e! %"
 endfunc
+" }
 
+" cursor style {
 if &term =~ '^xterm'
   let &t_SI .= "\<Esc>[5 q"
   let &t_EI .= "\<Esc>[1 q"
@@ -409,3 +397,8 @@ if &term =~ '^xterm'
   " 5 -> blinking vertical bar
   " 6 -> solid vertical bar
 endif
+" }
+
+" ctags {
+map <f12> :!~/bin/git_ctags.sh<cr>
+" }
