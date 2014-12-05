@@ -143,6 +143,7 @@
   set foldenable                  " auto fold code
   set cursorline                  " highlight current line
   set anti                        " make text pretty
+  set iskeyword-=_                " treat underscores as word-breaks
 " }
 
 " GUI Settings {
@@ -219,8 +220,10 @@
     \ 'mode': 'active',
     \ 'passive_filetypes': ['html','java'] }
 
-  " C0103:Invalid name; C0111: no doc string; W0141 map/filter
-  let g:syntastic_python_pylint_args = '-d C0103,C0111,W0141'
+  " C0103:Invalid name; C0111:no doc string; W0141:map/filter
+  " W0232:No init in class; R0201:could be func; W0142:*/** magic
+  " R0903:too few method; R0904: too many method
+  let g:syntastic_python_pylint_args = '-d R0904,R0903,W0142,W0232,R0201,C0103,C0111,W0141'
   let g:syntastic_javascript_jshint_conf = '~/.jshintrc'
 " }
 
