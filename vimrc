@@ -42,6 +42,7 @@
   "NeoBundle 'plasticboy/vim-markdown'     " Syntax highlighting and matching rules for Markdown
   NeoBundle 'tpope/vim-fugitive'          " A Git wrapper so awesome, it should be illegal
   NeoBundle 'tpope/vim-surround'          " quoting/parenthesizing made simple
+  NeoBundle 'mxw/vim-jsx'                 " Syntax highlighting and indenting for JSX
 
   " Github `vim-scripts`
   " NeoBundle 'sudo.vim'                    " Allows one to edit a file with prevledges from an unprivledged session
@@ -143,7 +144,6 @@
   set foldenable                  " auto fold code
   set cursorline                  " highlight current line
   set anti                        " make text pretty
-  set iskeyword-=_                " treat underscores as word-breaks
 " }
 
 " GUI Settings {
