@@ -174,6 +174,13 @@
   let mapleader = ","
   let g:mapleader = ","
 
+  " delete without yanking
+  nnoremap <leader>d "_d
+  vnoremap <leader>d "_d
+
+  " replace currently selected text with default register without yanking it
+  vnoremap <leader>p "_dP
+
   " Code folding options
   nmap <leader>f0 :set foldlevel=0<CR>
   nmap <leader>f1 :set foldlevel=1<CR>
@@ -223,8 +230,19 @@
   " C0103:Invalid name; C0111:no doc string; W0141:map/filter
   " W0232:No init in class; R0201:could be func; W0142:*/** magic
   " R0903:too few method; R0904: too many method
-  let g:syntastic_python_pylint_args = '-d R0904,R0903,W0142,W0232,R0201,C0103,C0111,W0141'
-  let g:syntastic_javascript_jshint_conf = '~/.jshintrc'
+  " C0111,W0141: no such attr
+  "let g:syntastic_python_pylint_args = '-d R0904,R0903,W0142,W0232,R0201,C0103'
+  "let g:syntastic_javascript_jshint_conf = '~/.jshintrc'
+  let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+
+  "let g:syntastic_always_populate_loc_list = 1
+  "let g:syntastic_auto_loc_list = 1
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 0
 " }
 
 " vimScript {
