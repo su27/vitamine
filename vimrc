@@ -304,10 +304,10 @@
 "}
 
 " Powerline {
-  let g:Powerline_symbols = 'fancy'
+  let g:Powerline_symbols = 'unicode'
   "if not use patched font:
   "let g:Powerline_symbols = 'compatible'
-  let g:Powerline_colorscheme = 'solarized256'
+  let g:Powerline_colorscheme = 'default'
 " }
 
 " EasyMotion {
