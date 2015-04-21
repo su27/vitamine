@@ -233,7 +233,7 @@
   " C0111,W0141: no such attr
   "let g:syntastic_python_pylint_args = '-d R0904,R0903,W0142,W0232,R0201,C0103'
   "let g:syntastic_javascript_jshint_conf = '~/.jshintrc'
-  let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+  let g:syntastic_python_checkers = ['flake8']
 
   set statusline+=%#warningmsg#
   set statusline+=%{SyntasticStatuslineFlag()}
