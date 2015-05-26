@@ -101,6 +101,7 @@
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
   autocmd FileType java setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
   autocmd FileType xml setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+  autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 " }
 
 " UI {
