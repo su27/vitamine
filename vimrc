@@ -43,6 +43,7 @@
   NeoBundle 'tpope/vim-fugitive'          " A Git wrapper so awesome, it should be illegal
   NeoBundle 'tpope/vim-surround'          " quoting/parenthesizing made simple
   NeoBundle 'mxw/vim-jsx'                 " Syntax highlighting and indenting for JSX
+  NeoBundle 'guns/vim-clojure-static'     " Syntax highlighting and indenting for Clojure
 
   " Github `vim-scripts`
   " NeoBundle 'sudo.vim'                    " Allows one to edit a file with prevledges from an unprivledged session
@@ -304,10 +305,10 @@
 "}
 
 " Powerline {
-  let g:Powerline_symbols = 'fancy'
+  let g:Powerline_symbols = 'unicode'
   "if not use patched font:
   "let g:Powerline_symbols = 'compatible'
-  let g:Powerline_colorscheme = 'solarized256'
+  let g:Powerline_colorscheme = 'default'
 " }
 
 " EasyMotion {
