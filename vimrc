@@ -102,6 +102,7 @@
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
   autocmd FileType java setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
   autocmd FileType xml setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+  autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 " }
 
 " UI {
@@ -234,7 +235,7 @@
   " C0111,W0141: no such attr
   "let g:syntastic_python_pylint_args = '-d R0904,R0903,W0142,W0232,R0201,C0103'
   "let g:syntastic_javascript_jshint_conf = '~/.jshintrc'
-  let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+  let g:syntastic_python_checkers = ['flake8']
 
   set statusline+=%#warningmsg#
   set statusline+=%{SyntasticStatuslineFlag()}

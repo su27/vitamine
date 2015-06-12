@@ -13,6 +13,8 @@
 "     2008 May 9:     Added support for Jinja2 changes (new keyword rules)
 
 " .vimrc variable to disable html highlighting
+setlocal shiftwidth=2
+setlocal tabstop=2
 if !exists('g:jinja_syntax_html')
    let g:jinja_syntax_html=1
 endif
