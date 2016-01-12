@@ -228,6 +228,7 @@
   let g:syntastic_mode_map = {
     \ 'mode': 'active',
     \ 'passive_filetypes': ['html','java'] }
+  let g:syntastic_python_flake8_args = "--ignore=E265,E501,E261"
 
   " C0103:Invalid name; C0111:no doc string; W0141:map/filter
   " W0232:No init in class; R0201:could be func; W0142:*/** magic
@@ -271,7 +272,10 @@
   let g:ctrlp_map = '<c-p>'
   let g:ctrlp_cmd = 'CtrlP'
   let g:ctrlp_working_path_mode = 'ra'
-  let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+  let g:ctrlp_custom_ignore = {
+    \ 'dir': '\v[\/](\.(git|hg|svn)$|venv$|node_modules$|bower_components$|static$|build$)',
+    \ 'file': '\v\.(exe|so|dll)$',
+    \ }
 
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.pyc
 
