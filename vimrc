@@ -50,6 +50,7 @@
   NeoBundle 'ack.vim'                     " Plugin for the Perl module / CLI script 'ack'
   NeoBundle 'taglist.vim'                 " Provides an overview of the structure of source code
   "NeoBundle 'UltiSnips'                   " The ultimate snippet solution for python enabled Vim
+  NeoBundle 'fatih/vim-go'                 " For golang
 
   " Auto-Installation
   if neobundle#exists_not_installed_bundles()
@@ -252,6 +253,10 @@
   let g:html_indent_inctags = 'html,body,head,tbody'
   let g:html_indent_script1 = 'inc'
   let g:html_indent_style1 = 'inc'
+" }
+
+" vim-go {
+  let g:go_fmt_command = "goimports"
 " }
 
 " neocomplcache {
