@@ -255,6 +255,10 @@
   let g:html_indent_style1 = 'inc'
 " }
 
+" vim-go {
+  let g:go_fmt_command = "goimports"
+" }
+
 " neocomplcache {
   "let g:acp_enableAtStartup = 0
   "let g:neocomplcache_enable_at_startup = 1
