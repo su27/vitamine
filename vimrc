@@ -51,6 +51,7 @@
   NeoBundle 'taglist.vim'                 " Provides an overview of the structure of source code
   "NeoBundle 'UltiSnips'                   " The ultimate snippet solution for python enabled Vim
   NeoBundle 'fatih/vim-go'                 " For golang
+  NeoBundle 'davidhalter/jedi-vim'         " Python autocompletion
 
   " Auto-Installation
   if neobundle#exists_not_installed_bundles()
