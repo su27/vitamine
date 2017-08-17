@@ -25,32 +25,31 @@
   call neobundle#rc(expand('~/.vim/bundle/'))
 
   " Github Repos
+  NeoBundle 'Valloric/YouCompleteMe'      " A code-completion engine for Vim
   NeoBundle 'Shougo/vimproc'              " Interactive command execution
-  "NeoBundle 'Shougo/neocomplcache'        " Ultimate auto-completion system
   NeoBundle 'scrooloose/syntastic'        " Syntax checking hacks
   NeoBundle 'scrooloose/nerdtree'         " A tree explorer plugin
   NeoBundle 'scrooloose/nerdcommenter'    " Vim plugin for intensely orgasmic commenting
   NeoBundle 'kien/ctrlp.vim'              " Fuzzy file, buffer, mru, tag, etc finder
   "NeoBundle 'myusuf3/numbers.vim'         " A vim plugin for better line numbers
-  NeoBundle 'Lokaltog/vim-powerline'      " The ultimate vim statusline utility
-  "NeoBundle 'ervandew/supertab'           " Perform all your vim insert mode completions with Tab
+  "NeoBundle 'Lokaltog/vim-powerline'      " The ultimate vim statusline utility
+  NeoBundle 'vim-airline/vim-airline'
+  NeoBundle 'vim-airline/vim-airline-themes'
   NeoBundle 'Lokaltog/vim-easymotion'     " Vim motions on speed!
   NeoBundle 'hail2u/vim-css3-syntax'      " Add CSS3 syntax support to vim's built-in `syntax/css.vim`
   NeoBundle 'skammer/vim-css-color'       " Highlight colors in css files
   NeoBundle 'keitheis/vim-plim'           " Syntax Highlighting for Plim
   NeoBundle 'pangloss/vim-javascript'     " Vastly improved vim's javascript indentation
-  "NeoBundle 'plasticboy/vim-markdown'     " Syntax highlighting and matching rules for Markdown
+  NeoBundle 'plasticboy/vim-markdown'     " Syntax highlighting and matching rules for Markdown
   NeoBundle 'tpope/vim-fugitive'          " A Git wrapper so awesome, it should be illegal
   NeoBundle 'tpope/vim-surround'          " quoting/parenthesizing made simple
   NeoBundle 'mxw/vim-jsx'                 " Syntax highlighting and indenting for JSX
   NeoBundle 'guns/vim-clojure-static'     " Syntax highlighting and indenting for Clojure
+  "NeoBundle 'fatih/vim-go'                " For golang
 
   " Github `vim-scripts`
-  " NeoBundle 'sudo.vim'                    " Allows one to edit a file with prevledges from an unprivledged session
   NeoBundle 'ack.vim'                     " Plugin for the Perl module / CLI script 'ack'
   NeoBundle 'taglist.vim'                 " Provides an overview of the structure of source code
-  "NeoBundle 'UltiSnips'                   " The ultimate snippet solution for python enabled Vim
-  NeoBundle 'fatih/vim-go'                 " For golang
 
   " Auto-Installation
   if neobundle#exists_not_installed_bundles()
@@ -102,8 +101,9 @@
   autocmd BufWritePre <buffer> call StripTrailingWhitespace()
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
   autocmd FileType java setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-  autocmd FileType xml setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+  autocmd FileType xml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
   autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 " }
 
 " UI {
@@ -171,11 +171,14 @@
   map te :tabedit
   map rn :bnext<cr>
   map rp :bprev<cr>
+  map rq :bdelete<cr>
   map <C-j> 10j
   map <C-k> 10k
 
   let mapleader = ","
   let g:mapleader = ","
+
+  set pastetoggle=<leader>gg
 
   " delete without yanking
   nnoremap <leader>d "_d
@@ -259,13 +262,12 @@
   let g:go_fmt_command = "goimports"
 " }
 
-" neocomplcache {
-  "let g:acp_enableAtStartup = 0
-  "let g:neocomplcache_enable_at_startup = 1
-  "let g:neocomplcache_enable_smart_case = 1
-  "let g:neocomplcache_enable_camel_case_completion = 1
-  "let g:neocomplcache_enable_underbar_completion = 1
-  "let g:neocomplcache_min_syntax_length = 3
+" YouCompleteMe {
+let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+"let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
 " }
 
 " nerdcommenter {
@@ -318,7 +320,7 @@
   let g:Powerline_symbols = 'unicode'
   "if not use patched font:
   "let g:Powerline_symbols = 'compatible'
-  let g:Powerline_colorscheme = 'default'
+  "let g:Powerline_colorscheme = 'default'
 " }
 
 " EasyMotion {
@@ -336,8 +338,9 @@
 " }
 
 " Taglist {
+  set tags=./tags,.git/tags,./TAGS,tags;~,TAGS;~
   nmap <silent> <leader>tg :TlistToggle<CR>
-  "let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+  let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
   let Tlist_File_Fold_Auto_Close=1
   let Tlist_Exit_OnlyWindow = 1
   let Tlist_Show_Menu=1
@@ -397,7 +400,7 @@
 " autopep8 {
 map <F8> :call FormartSrc()<CR>
 
-func FormartSrc()
+function! FormartSrc()
     exec "w"
     if &filetype == 'c'
     exec "!astyle --style=ansi --one-line=keep-statements -a --suffix=none %"
@@ -415,7 +418,7 @@ func FormartSrc()
     exec "!astyle --style=gnu --suffix=none %"
     endif
     exec "e! %"
-endfunc
+endfunction
 " }
 
 " cursor style {
@@ -433,4 +436,10 @@ endif
 
 " ctags {
 map <f12> :!~/bin/git_ctags.sh<cr>
+" }
+
+" airline {
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
+let g:airline_theme='serene'
 " }
