@@ -25,7 +25,7 @@
   call neobundle#rc(expand('~/.vim/bundle/'))
 
   " Github Repos
-  NeoBundle 'Valloric/YouCompleteMe'      " A code-completion engine for Vim
+  "NeoBundle 'Valloric/YouCompleteMe'      " A code-completion engine for Vim
   NeoBundle 'Shougo/vimproc'              " Interactive command execution
   NeoBundle 'scrooloose/syntastic'        " Syntax checking hacks
   NeoBundle 'scrooloose/nerdtree'         " A tree explorer plugin
