@@ -232,11 +232,12 @@
   let g:syntastic_mode_map = {
     \ 'mode': 'active',
     \ 'passive_filetypes': ['html','java'] }
-  let g:syntastic_python_flake8_args = "--ignore=E265,E701,E501,E261,D105,D100,D103,D400,D102,D302,D205,D101"
+  let g:syntastic_python_flake8_args = "--ignore=E265,E701,E501,E261,D105,D100,D103,D400,D102,D302,D205,D101,W503"
 
   " C0103:Invalid name; C0111:no doc string; W0141:map/filter
   " W0232:No init in class; R0201:could be func; W0142:*/** magic
   " R0903:too few method; R0904: too many method
+  " W503:line break before binary operator
   " C0111,W0141: no such attr
   "let g:syntastic_python_pylint_args = '-d R0904,R0903,W0142,W0232,R0201,C0103'
   "let g:syntastic_javascript_jshint_conf = '~/.jshintrc'
