@@ -30,9 +30,9 @@
   NeoBundle 'scrooloose/syntastic'        " Syntax checking hacks
   NeoBundle 'scrooloose/nerdtree'         " A tree explorer plugin
   NeoBundle 'scrooloose/nerdcommenter'    " Vim plugin for intensely orgasmic commenting
-  NeoBundle 'kien/ctrlp.vim'              " Fuzzy file, buffer, mru, tag, etc finder
+  NeoBundle 'ctrlpvim/ctrlp.vim'          " Fuzzy file, buffer, mru, tag, etc finder
   "NeoBundle 'myusuf3/numbers.vim'         " A vim plugin for better line numbers
-  "NeoBundle 'Lokaltog/vim-powerline'      " The ultimate vim statusline utility
+  "NeoBundle 'powerline/powerline'      " The ultimate vim statusline utility
   NeoBundle 'vim-airline/vim-airline'
   NeoBundle 'vim-airline/vim-airline-themes'
   NeoBundle 'Lokaltog/vim-easymotion'     " Vim motions on speed!
@@ -116,7 +116,7 @@
   "in mintty, comment out the following line
   let g:solarized_termcolors=256
 
-  colorscheme solarized
+  colorscheme SerialExperimentsLain
 
   if has('cmdline_info')
     set ruler                   " show the ruler
@@ -268,6 +268,7 @@ let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags
 let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
 let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
 " }
 
 " nerdcommenter {
@@ -321,6 +322,10 @@ let g:ycm_complete_in_strings = 1 " Completion in string
   "if not use patched font:
   "let g:Powerline_symbols = 'compatible'
   "let g:Powerline_colorscheme = 'default'
+" }
+"
+" markdown {
+  let g:vim_markdown_folding_disabled = 1
 " }
 
 " EasyMotion {
@@ -441,5 +446,6 @@ map <f12> :!~/bin/git_ctags.sh<cr>
 " airline {
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_powerline_fonts = 1
-let g:airline_theme='serene'
+" themes list: https://github.com/vim-airline/vim-airline/wiki/Screenshots
+let g:airline_theme='kolor'
 " }
