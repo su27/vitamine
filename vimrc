@@ -232,8 +232,9 @@
   let g:syntastic_mode_map = {
     \ 'mode': 'active',
     \ 'passive_filetypes': ['html','java'] }
-  let g:syntastic_python_flake8_args = "--ignore=E265,E701,E501,E261,D105,D100,D103,D400,D102,D302,D205,D101,W503"
+  let g:syntastic_python_flake8_args = "--ignore=E731,E265,E701,E501,E261,D105,D100,D103,D400,D102,D302,D205,D101,W503"
 
+  " E731:use func not lambda
   " C0103:Invalid name; C0111:no doc string; W0141:map/filter
   " W0232:No init in class; R0201:could be func; W0142:*/** magic
   " R0903:too few method; R0904: too many method
@@ -446,7 +447,7 @@ map <f12> :!~/bin/git_ctags.sh<cr>
 
 " airline {
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 " themes list: https://github.com/vim-airline/vim-airline/wiki/Screenshots
-let g:airline_theme='kolor'
+let g:airline_theme = 'lucius'
 " }
