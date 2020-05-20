@@ -18,11 +18,9 @@
 " }
 
 " NeoBundles {
-  if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-  endif
-
-  call neobundle#rc(expand('~/.vim/bundle/'))
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#begin(expand('/Users/su27/.vim/bundle'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
 
   " Github Repos
   NeoBundle 'Valloric/YouCompleteMe'      " A code-completion engine for Vim
@@ -35,21 +33,23 @@
   "NeoBundle 'powerline/powerline'      " The ultimate vim statusline utility
   NeoBundle 'vim-airline/vim-airline'
   NeoBundle 'vim-airline/vim-airline-themes'
-  NeoBundle 'Lokaltog/vim-easymotion'     " Vim motions on speed!
+  "NeoBundle 'Lokaltog/vim-easymotion'     " Vim motions on speed!
   NeoBundle 'hail2u/vim-css3-syntax'      " Add CSS3 syntax support to vim's built-in `syntax/css.vim`
   NeoBundle 'skammer/vim-css-color'       " Highlight colors in css files
-  NeoBundle 'keitheis/vim-plim'           " Syntax Highlighting for Plim
+  "NeoBundle 'keitheis/vim-plim'           " Syntax Highlighting for Plim
   NeoBundle 'pangloss/vim-javascript'     " Vastly improved vim's javascript indentation
   NeoBundle 'plasticboy/vim-markdown'     " Syntax highlighting and matching rules for Markdown
   NeoBundle 'tpope/vim-fugitive'          " A Git wrapper so awesome, it should be illegal
-  NeoBundle 'tpope/vim-surround'          " quoting/parenthesizing made simple
-  NeoBundle 'mxw/vim-jsx'                 " Syntax highlighting and indenting for JSX
-  NeoBundle 'guns/vim-clojure-static'     " Syntax highlighting and indenting for Clojure
-  "NeoBundle 'fatih/vim-go'                " For golang
+  "NeoBundle 'tpope/vim-surround'          " quoting/parenthesizing made simple
+  "NeoBundle 'mxw/vim-jsx'                 " Syntax highlighting and indenting for JSX
+  "NeoBundle 'guns/vim-clojure-static'     " Syntax highlighting and indenting for Clojure
+  NeoBundle 'fatih/vim-go'                " For golang
 
   " Github `vim-scripts`
   NeoBundle 'ack.vim'                     " Plugin for the Perl module / CLI script 'ack'
   NeoBundle 'taglist.vim'                 " Provides an overview of the structure of source code
+
+  call neobundle#end()
 
   " Auto-Installation
   if neobundle#exists_not_installed_bundles()
@@ -67,12 +67,6 @@
   set encoding=utf-8
   scriptencoding utf-8
   set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
-
-  if has ('x') && has ('gui') " on Linux use + register for copy-paste
-    set clipboard=unnamedplus
-  elseif has ('gui') " one mac and windows, use * register for copy-paste
-    set clipboard=unnamed
-  endif
 
   set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
   set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
@@ -450,5 +444,5 @@ map <f12> :!~/bin/git_ctags.sh<cr>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 " themes list: https://github.com/vim-airline/vim-airline/wiki/Screenshots
-let g:airline_theme = 'lucius'
+let g:airline_theme = 'luna'
 " }
