@@ -48,6 +48,7 @@
   " Github `vim-scripts`
   NeoBundle 'ack.vim'                     " Plugin for the Perl module / CLI script 'ack'
   NeoBundle 'taglist.vim'                 " Provides an overview of the structure of source code
+  NeoBundle 'tpope/vim-rhubarb'           " Open github(and enterprise) pages for current file
 
   call neobundle#end()
 
@@ -400,9 +401,9 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 " }
 
 " autopep8 {
-map <F8> :call FormartSrc()<CR>
+  map <F8> :call FormartSrc()<CR>
 
-function! FormartSrc()
+  function! FormartSrc()
     exec "w"
     if &filetype == 'c'
     exec "!astyle --style=ansi --one-line=keep-statements -a --suffix=none %"
@@ -420,29 +421,34 @@ function! FormartSrc()
     exec "!astyle --style=gnu --suffix=none %"
     endif
     exec "e! %"
-endfunction
+  endfunction
 " }
 
 " cursor style {
-if &term =~ '^xterm'
-  let &t_SI .= "\<Esc>[5 q"
-  let &t_EI .= "\<Esc>[1 q"
-  " 1 or 0 -> blinking block
-  " 2 -> solid underscore
-  " 3 -> blinking underscore
-  " 4 -> solid block
-  " 5 -> blinking vertical bar
-  " 6 -> solid vertical bar
-endif
+  if &term =~ '^xterm'
+    let &t_SI .= "\<Esc>[5 q"
+    let &t_EI .= "\<Esc>[1 q"
+    " 1 or 0 -> blinking block
+    " 2 -> solid underscore
+    " 3 -> blinking underscore
+    " 4 -> solid block
+    " 5 -> blinking vertical bar
+    " 6 -> solid vertical bar
+  endif
 " }
 
 " ctags {
-map <f12> :!~/bin/git_ctags.sh<cr>
+  map <f12> :!~/bin/git_ctags.sh<cr>
 " }
 
 " airline {
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-" themes list: https://github.com/vim-airline/vim-airline/wiki/Screenshots
-let g:airline_theme = 'luna'
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline_powerline_fonts = 1
+  " themes list: https://github.com/vim-airline/vim-airline/wiki/Screenshots
+  let g:airline_theme = 'luna'
+" }
+
+" rhubarb {
+  let g:github_enterprise_urls = ['https://github.intra.douban.com']
+  noremap <leader>w :Gbrowse<cr>
 " }
