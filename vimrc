@@ -197,7 +197,6 @@
   " Easy indent for code blocks
   nmap <tab>    v>
   nmap <s-tab>  v<
-  nmap <cr>     :
   vmap <tab>    >gv
   vmap <s-tab>  <gv
 
@@ -312,7 +311,7 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 " Fugitive {
   nnoremap <silent> <leader>st :Gstatus<CR>
   nnoremap <silent> <leader>di :Gdiff<CR>
-  nnoremap <silent> <leader>bl :Gblame<CR>
+  nnoremap <silent> <leader>bl :Git blame<CR>
   nnoremap <silent> <leader>.. :edit %:h<CR>
   nnoremap <silent> <leader>nn :cnext<CR>
   nnoremap <silent> <leader>pp :cprev<CR>
@@ -449,7 +448,7 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
   let g:airline#extensions#tabline#enabled = 1
   let g:airline_powerline_fonts = 1
   " themes list: https://github.com/vim-airline/vim-airline/wiki/Screenshots
-  let g:airline_theme = 'luna'
+  let g:airline_theme = 'tomorrow'
 " }
 
 " rhubarb {
