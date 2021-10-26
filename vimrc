@@ -25,21 +25,21 @@
   " Github Repos
   NeoBundle 'Valloric/YouCompleteMe'      " A code-completion engine for Vim
   NeoBundle 'Shougo/vimproc'              " Interactive command execution
-  NeoBundle 'scrooloose/syntastic'        " Syntax checking hacks
-  NeoBundle 'scrooloose/nerdtree'         " A tree explorer plugin
-  NeoBundle 'scrooloose/nerdcommenter'    " Vim plugin for intensely orgasmic commenting
+  NeoBundle 'vim-syntastic/syntastic'        " Syntax checking hacks
+  NeoBundle 'preservim/nerdtree'         " A tree explorer plugin
+  NeoBundle 'preservim/nerdcommenter'    " Vim plugin for intensely orgasmic commenting
   NeoBundle 'ctrlpvim/ctrlp.vim'          " Fuzzy file, buffer, mru, tag, etc finder
   "NeoBundle 'myusuf3/numbers.vim'         " A vim plugin for better line numbers
-  "NeoBundle 'powerline/powerline'      " The ultimate vim statusline utility
   NeoBundle 'vim-airline/vim-airline'
   NeoBundle 'vim-airline/vim-airline-themes'
   "NeoBundle 'Lokaltog/vim-easymotion'     " Vim motions on speed!
-  NeoBundle 'hail2u/vim-css3-syntax'      " Add CSS3 syntax support to vim's built-in `syntax/css.vim`
-  NeoBundle 'skammer/vim-css-color'       " Highlight colors in css files
+  "NeoBundle 'hail2u/vim-css3-syntax'      " Add CSS3 syntax support to vim's built-in `syntax/css.vim`
+  "NeoBundle 'skammer/vim-css-color'       " Highlight colors in css files
   "NeoBundle 'keitheis/vim-plim'           " Syntax Highlighting for Plim
   NeoBundle 'pangloss/vim-javascript'     " Vastly improved vim's javascript indentation
   NeoBundle 'plasticboy/vim-markdown'     " Syntax highlighting and matching rules for Markdown
   NeoBundle 'tpope/vim-fugitive'          " A Git wrapper so awesome, it should be illegal
+  NeoBundle 'tpope/vim-rhubarb'           " Open github(and enterprise) pages for current file
   "NeoBundle 'tpope/vim-surround'          " quoting/parenthesizing made simple
   "NeoBundle 'mxw/vim-jsx'                 " Syntax highlighting and indenting for JSX
   "NeoBundle 'guns/vim-clojure-static'     " Syntax highlighting and indenting for Clojure
@@ -48,7 +48,6 @@
   " Github `vim-scripts`
   NeoBundle 'ack.vim'                     " Plugin for the Perl module / CLI script 'ack'
   NeoBundle 'taglist.vim'                 " Provides an overview of the structure of source code
-  NeoBundle 'tpope/vim-rhubarb'           " Open github(and enterprise) pages for current file
 
   call neobundle#end()
 
@@ -309,7 +308,7 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 " }
 
 " Fugitive {
-  nnoremap <silent> <leader>st :Gstatus<CR>
+  nnoremap <silent> <leader>st :Git<CR>
   nnoremap <silent> <leader>di :Gdiff<CR>
   nnoremap <silent> <leader>bl :Git blame<CR>
   nnoremap <silent> <leader>.. :edit %:h<CR>
@@ -448,7 +447,7 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
   let g:airline#extensions#tabline#enabled = 1
   let g:airline_powerline_fonts = 1
   " themes list: https://github.com/vim-airline/vim-airline/wiki/Screenshots
-  let g:airline_theme = 'tomorrow'
+  let g:airline_theme = 'badwolf'
 " }
 
 " rhubarb {
