@@ -24,9 +24,9 @@
 
   " Github Repos
   NeoBundle 'Valloric/YouCompleteMe'      " A code-completion engine for Vim
-  NeoBundle 'Shougo/vimproc'              " Interactive command execution
+  "NeoBundle 'Shougo/vimproc'              " Interactive command execution
   NeoBundle 'vim-syntastic/syntastic'        " Syntax checking hacks
-  NeoBundle 'preservim/nerdtree'         " A tree explorer plugin
+  "NeoBundle 'preservim/nerdtree'         " A tree explorer plugin
   NeoBundle 'preservim/nerdcommenter'    " Vim plugin for intensely orgasmic commenting
   NeoBundle 'ctrlpvim/ctrlp.vim'          " Fuzzy file, buffer, mru, tag, etc finder
   "NeoBundle 'myusuf3/numbers.vim'         " A vim plugin for better line numbers
@@ -36,18 +36,21 @@
   "NeoBundle 'hail2u/vim-css3-syntax'      " Add CSS3 syntax support to vim's built-in `syntax/css.vim`
   "NeoBundle 'skammer/vim-css-color'       " Highlight colors in css files
   "NeoBundle 'keitheis/vim-plim'           " Syntax Highlighting for Plim
-  NeoBundle 'pangloss/vim-javascript'     " Vastly improved vim's javascript indentation
+  "NeoBundle 'pangloss/vim-javascript'     " Vastly improved vim's javascript indentation
   NeoBundle 'plasticboy/vim-markdown'     " Syntax highlighting and matching rules for Markdown
   NeoBundle 'tpope/vim-fugitive'          " A Git wrapper so awesome, it should be illegal
   NeoBundle 'tpope/vim-rhubarb'           " Open github(and enterprise) pages for current file
   "NeoBundle 'tpope/vim-surround'          " quoting/parenthesizing made simple
   "NeoBundle 'mxw/vim-jsx'                 " Syntax highlighting and indenting for JSX
   "NeoBundle 'guns/vim-clojure-static'     " Syntax highlighting and indenting for Clojure
-  NeoBundle 'fatih/vim-go'                " For golang
+  "NeoBundle 'fatih/vim-go'                " For golang
 
   " Github `vim-scripts`
   NeoBundle 'ack.vim'                     " Plugin for the Perl module / CLI script 'ack'
-  NeoBundle 'taglist.vim'                 " Provides an overview of the structure of source code
+  "NeoBundle 'taglist.vim'                 " Provides an overview of the structure of source code
+  "NeoBundle 'github/copilot.vim'
+  "NeoBundle 'Exafunction/codeium.vim'
+  NeoBundle 'github/copilot.vim'          " Copilot for vim
 
   call neobundle#end()
 
@@ -110,7 +113,7 @@
   "in mintty, comment out the following line
   let g:solarized_termcolors=256
 
-  colorscheme SerialExperimentsLain
+  colorscheme molokai
 
   if has('cmdline_info')
     set ruler                   " show the ruler
@@ -268,7 +271,7 @@ let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language
 let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
 let g:ycm_autoclose_preview_window_after_insertion = 1
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jj :YcmCompleter GoTo<CR>
 " }
 
 " nerdcommenter {
