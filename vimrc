@@ -19,7 +19,7 @@
 
 " NeoBundles {
   set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#begin(expand('/Users/su27/.vim/bundle'))
+  call neobundle#begin(expand('/home/su27/.vim/bundle'))
   NeoBundleFetch 'Shougo/neobundle.vim'
 
   " Github Repos
@@ -69,7 +69,8 @@
   set mousehide              " hide the mouse cursor while typing
   set encoding=utf-8
   scriptencoding utf-8
-  set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+  set fileencodings=utf-8
+  set termencoding=utf-8
 
   set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
   set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
@@ -144,21 +145,6 @@
   set foldenable                  " auto fold code
   set cursorline                  " highlight current line
   set anti                        " make text pretty
-" }
-
-" GUI Settings {
-  if has("gui_running") || has("gui_macvim")
-    set guioptions-=T           " remove the MacVim's toolbar
-    if has('gui_macvim')
-      set transparency=5        " Make the window slightly transparent
-    endif
-
-    if has("gui_gtk2")
-      set guifont=Monaco\ 13,Consolas\ 13
-    else
-      set guifont=Monaco:h13,Consolas:h13
-    endif
-  endif
 " }
 
 " Key Mapping {
@@ -321,10 +307,10 @@ nnoremap <leader>jj :YcmCompleter GoTo<CR>
 "}
 
 " Powerline {
-  let g:Powerline_symbols = 'unicode'
+  "let g:Powerline_symbols = 'unicode'
   "if not use patched font:
-  "let g:Powerline_symbols = 'compatible'
-  "let g:Powerline_colorscheme = 'default'
+  let g:Powerline_symbols = 'compatible'
+  let g:Powerline_colorscheme = 'default'
 " }
 "
 " markdown {
@@ -450,7 +436,21 @@ nnoremap <leader>jj :YcmCompleter GoTo<CR>
   let g:airline#extensions#tabline#enabled = 1
   let g:airline_powerline_fonts = 1
   " themes list: https://github.com/vim-airline/vim-airline/wiki/Screenshots
-  let g:airline_theme = 'badwolf'
+  let g:airline_theme = 'hybrid'
+  set guifont=Monaco\ for\ Powerline:h11
+  set renderoptions=type:directx,renmode:5
+
+  " https://github.com/vim-airline/vim-airline/blob/d9f42cb46710e31962a9609939ddfeb0685dd779/doc/airline.txt#L365
+  if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+  let g:airline_left_sep = ' '
+  let g:airline_right_sep = ' '
+  let g:airline_right_alt_sep = '|'
+  let g:airline_left_alt_sep = '|'
+  let g:airline_symbols.branch = ''
+  let g:airline_symbols.readonly = 'R'
+  let g:airline_symbols.linenr = 'L'
 " }
 
 " rhubarb {
