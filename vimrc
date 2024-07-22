@@ -24,6 +24,7 @@
 
   " Github Repos
   NeoBundle 'Valloric/YouCompleteMe'      " A code-completion engine for Vim
+  NeoBundle 'Exafunction/codeium.vim'      " codeium
   "NeoBundle 'Shougo/vimproc'              " Interactive command execution
   NeoBundle 'vim-syntastic/syntastic'        " Syntax checking hacks
   "NeoBundle 'preservim/nerdtree'         " A tree explorer plugin
@@ -257,7 +258,7 @@ let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language
 let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
 let g:ycm_autoclose_preview_window_after_insertion = 1
-nnoremap <leader>jj :YcmCompleter GoTo<CR>
+nnoremap gd :YcmCompleter GoTo<CR>
 " }
 
 " nerdcommenter {
@@ -283,6 +284,7 @@ nnoremap <leader>jj :YcmCompleter GoTo<CR>
   nmap <silent> <leader>f :CtrlP<cr>
   nmap <silent> <leader>r :CtrlPMRU<cr>
   nmap <silent> <leader>m :CtrlPMixed<cr>
+  nmap <silent> <leader>b :CtrlPBuffer<cr>
 " }
 
 " Ack {
@@ -455,5 +457,5 @@ nnoremap <leader>jj :YcmCompleter GoTo<CR>
 
 " rhubarb {
   let g:github_enterprise_urls = ['https://github.intra.douban.com']
-  noremap <leader>w :Gbrowse<cr>
+  noremap <leader>w :GBrowse!<cr>
 " }
