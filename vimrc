@@ -309,7 +309,7 @@ imap <script><silent><nowait><expr> <C-j> codeium#AcceptNextLine()
   nnoremap <silent> <leader>nn :cnext<CR>
   nnoremap <silent> <leader>pp :cprev<CR>
   autocmd QuickFixCmdPost *grep* cwindow
-"}
+" }
 
 " Powerline {
   "let g:Powerline_symbols = 'unicode'
