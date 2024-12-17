@@ -50,7 +50,6 @@
   NeoBundle 'ack.vim'                     " Plugin for the Perl module / CLI script 'ack'
   "NeoBundle 'taglist.vim'                 " Provides an overview of the structure of source code
   "NeoBundle 'github/copilot.vim'
-  "NeoBundle 'Exafunction/codeium.vim'
   NeoBundle 'github/copilot.vim'          " Copilot for vim
 
   call neobundle#end()
@@ -156,8 +155,6 @@
   map rn :bnext<cr>
   map rp :bprev<cr>
   map rq :bdelete<cr>
-  map <C-j> 10j
-  map <C-k> 10k
 
   let mapleader = ","
   let g:mapleader = ","
@@ -259,6 +256,13 @@ let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
 let g:ycm_autoclose_preview_window_after_insertion = 1
 nnoremap gd :YcmCompleter GoTo<CR>
+" }
+
+" Codeium {
+imap <C-k> <Cmd>call codeium#Clear()<CR>
+imap <C-h> <Cmd>call codeium#CycleCompletions(1)<CR>
+imap <script><silent><nowait><expr> <C-l> codeium#AcceptNextWord()
+imap <script><silent><nowait><expr> <C-j> codeium#AcceptNextLine()
 " }
 
 " nerdcommenter {
