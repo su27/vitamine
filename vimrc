@@ -185,7 +185,6 @@
   nmap <s-tab>  v<
   vmap <tab>    >gv
   vmap <s-tab>  <gv
-
   " toggle between relative and absolute numbering
   " nnoremap <F3> :NumbersToggle<CR>
 " }
